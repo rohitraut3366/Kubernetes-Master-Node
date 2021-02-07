@@ -67,12 +67,12 @@
   ignore_errors: yes
 
 - name: Selinux permissive
-  shell: "setenforce 0"
+  command: "setenforce 0"
   ignore_errors: yes
   changed_when: false
 
 - name: Setting Selinux permissive permanently
-  shell: "sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config"
+  commmand: "sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config"
   args:
        warn: false
   ignore_errors: yes
@@ -99,6 +99,6 @@
       remote_src: yes
 
 - name: Install cni pluggin
-  shell: "{{ cni_plugin }}"
+  command: "{{ cni_plugin }}"
   ignore_errors: yes
 

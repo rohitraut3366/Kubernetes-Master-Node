@@ -20,12 +20,10 @@
       url: "{{ apt_gpgkey }}"
       state: present
 
-
 - name: Add Kubernetes Software repository into sources list
   apt_repository:
     repo: "{{ apt_repo_url }}"
     state: present
-
 
 - name: Install kubelet kubeadm kubectl
   package:
@@ -78,6 +76,5 @@
       remote_src: yes
 
 - name: Install cni pluggin
-  shell: "{{ cni_plugin }}"
+  command: "{{ cni_plugin }}"
   ignore_errors: yes
-
