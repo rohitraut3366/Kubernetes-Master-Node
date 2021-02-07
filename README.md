@@ -36,4 +36,3 @@ Author Information
 ------------------
 Rohit Raut
 [LinkedIn](https://www.linkedin.com/in/rohit-raut-71b8a119a/)
-
