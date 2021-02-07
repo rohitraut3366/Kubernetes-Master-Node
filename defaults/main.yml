@@ -18,7 +18,3 @@ pod_network_cidr: "10.244.0.0/16"
 kubeadm_init: "kubeadm init --pod-network-cidr={{ pod_network_cidr }}  --ignore-preflight-errors=NumCPU --ignore-preflight-errors=Mem"
 service: ["{{ container_daemon }}", "kubelet"]
 cni_plugin: "kubectl apply  -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml"
-
-
-
-
