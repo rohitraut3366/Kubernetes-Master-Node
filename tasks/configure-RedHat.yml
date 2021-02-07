@@ -57,7 +57,6 @@
 
 - name: reloding sysctl
   command: "sysctl --system"
-  changed_when: false
 
 - name: Disable firewall
   service:
@@ -69,7 +68,6 @@
 - name: Selinux permissive
   command: "setenforce 0"
   ignore_errors: yes
-  changed_when: false
 
 - name: Setting Selinux permissive permanently
   shell: "sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config"
